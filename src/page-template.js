@@ -30,7 +30,7 @@ const generateAbout = aboutText => {
           <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3">
             <h3 class="portfolio-item-title text-light">${name}</h3>
             <h5 class="portfolio-languages">${id}</h5>
-            <p>${email}</p>
+            <a class="portfolio-languages" href="mailto:${email}">${email}</a>
           </div>
         `;
         })
