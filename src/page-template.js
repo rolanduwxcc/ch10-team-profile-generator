@@ -1,51 +1,70 @@
+// const Employee = require('./Employee');
+
 //This page is what takes the Employee data and creates/returns HTML.
 //
 
 const { _mockConfigRegistry } = require("jest-mock");
 
-//create the about section
-const generateAbout = aboutText => {
-    if (!aboutText) {
-      return '';
-    }
-    return `
+const getRoleHTML = (role, roleSpecificData) => {
+  if (role === 'Manager') {
+    return `<h3 class="portfolio-item-title text-light">Office #: ${roleSpecificData}</h3>`;
+  } else if (role === 'Engineer') {
+    return `<h3 class="portfolio-item-title text-light">GitHub: ${roleSpecificData}</h3>`;
+  } else if (role === 'Intern') {
+    return `<h3 class="portfolio-item-title text-light">Schoole: ${roleSpecificData}</h3>`;
+  } else
+  return `
       <section class="my-3" id="about">
         <h2 class="text-dark bg-primary p-2 display-inline-block">About Me</h2>
         <p>${aboutText}</p>
       </section>
     `;
-  };
-  
-  //HTML generation for each employee card
-  const generateTeamMemberData = projectsArr => {
-    
-    //this will be the HTML for each employee card
-    return `
+};
+
+//HTML generation for each employee card
+const generateTeamMemberData = projectsArr => {
+  return `
     <section class="my-3" id="portfolio">
       <h2 class="text-dark bg-primary p-2 display-inline-block">Work</h2>
       <div class="flex-row justify-space-between">
       ${projectsArr
-        .map(({ name, id, email}) => {
-          return `
+      .map(({ name, id, email, officeNumber="", github="", school="" }) => {
+        let role = "";
+        let roleHTML = "";
+
+        if (officeNumber) {
+          role = "Manager";
+          roleHTML = getRoleHTML(role, officeNumber);
+        } else if (github) {
+          role = "Engineer";
+          roleHTML = getRoleHTML(role, github);
+        } else if (school) {
+          role = "Intern"
+          roleHTML = getRoleHTML(role, school);
+        }
+        else {role = ""}
+        return `
           <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3">
             <h3 class="portfolio-item-title text-light">${name}</h3>
+            <h3 class="portfolio-item-title text-light">${role}</h3>
             <h5 class="portfolio-languages">${id}</h5>
             <a class="portfolio-languages" href="mailto:${email}">${email}</a>
+            ${roleHTML}
           </div>
         `;
-        })
-        .join('')}
+      })
+      .join('')}
       </div>
     </section>
   `;
-  };
-  
-  module.exports = teamData => {
-    //destructure projects and about from templateData based on property key names
-    const myName = "Roland"
-    const myGithub = "rolanduwxcc";
-  
-    return `
+};
+
+module.exports = teamData => {
+  //destructure projects and about from templateData based on property key names
+  const myName = "Roland"
+  const myGithub = "rolanduwxcc";
+
+  return `
       <!DOCTYPE html>
       <html lang="en">
     
@@ -77,4 +96,4 @@ const generateAbout = aboutText => {
       </body>
       </html>
       `;
-  };
+};
