@@ -32,7 +32,9 @@
 W Rowland => find me on [GitHub](https://github.com/rolanduwxcc) or email me at rolanduwxcc@gmail.com
   
 ## Screenshots/Tests
-![readme-generator](assets/img/readmeMd-generator.gif)
+[YouTube How To of Profile Generator](https://youtu.be/UbX4dQj2trE)<br>
+[MP4 How To of Profile Generator](assets/media/CH10-Team-Profile-Generator.mp4)<br>
+[Screenshot of Example Page](assets/media/team-profile.png)<br>
 
 ## License & Copyrights
 Licensed under the [MIT License]('./LICENSE')

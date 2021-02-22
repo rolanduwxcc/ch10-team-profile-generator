@@ -42,7 +42,7 @@ const generateTeamMemberData = teamArr => {
             <h2 class="portfolio-item-title text-light">${name}</h2>
             <h4 class="text-uppercase text-tertiary">${role}</h4>
             <h5 class="portfolio-item-title text-light">employee id :: <span class="text-tertiary">${id}</span></h5>
-            <h5 class="portfolio-item-title text-light">email :: <a class="text-tertiary" href="mailto:${email}">${email}</a></h5>
+            <h5 class="portfolio-item-title text-light">email :: <a class="text-tertiary" href="mailto:${email}" target="_blank">${email}</a></h5>
             ${roleHTML}
           </div>
         `;
