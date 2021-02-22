@@ -57,40 +57,41 @@ module.exports = teamData => {
   const myName = "Roland"
   const myGithub = "rolanduwxcc";
 
-  //mock data to set team Data with full looking view for testing.
-  teamData = [
-    Manager = {
-      name: 'Nick Fury',
-      id: '1',
-      email: 'furious@shield.org',
-      officeNumber: '01'
-    },
-    Engineer = {
-      name: 'Tony Stank',
-      id: '2',
-      email: 'iamironman@shield.org',
-      github: 'theMechanic'
-    },
-    Engineer = {
-      name: 'Steve Rogers',
-      id: '3',
-      email: 'together@shield.org',
-      github: 'theShield'
-    },
-    Engineer = {
-      name: 'Carol Danvers',
-      id: '4',
-      email: 'marvelous@shield.org',
-      github: 'marVel'
-    },
-    Intern = {
-      name: 'Peter Parker',
-      id: '9',
-      email: 'spiderboy@shield.org',
-      school: 'MIT'
-    }
-  ];
-  console.log(teamData);
+  // //Mock data to set teamData with to get healthy generated data set.
+  // //This is for just tweaking the HTML only
+  // teamData = [
+  //   Manager = {
+  //     name: 'Nick Fury',
+  //     id: '1',
+  //     email: 'furious@shield.org',
+  //     officeNumber: '01'
+  //   },
+  //   Engineer = {
+  //     name: 'Tony Stank',
+  //     id: '2',
+  //     email: 'iamironman@shield.org',
+  //     github: 'theMechanic'
+  //   },
+  //   Engineer = {
+  //     name: 'Steve Rogers',
+  //     id: '3',
+  //     email: 'together@shield.org',
+  //     github: 'theShield'
+  //   },
+  //   Engineer = {
+  //     name: 'Carol Danvers',
+  //     id: '4',
+  //     email: 'marvelous@shield.org',
+  //     github: 'marVel'
+  //   },
+  //   Intern = {
+  //     name: 'Peter Parker',
+  //     id: '9',
+  //     email: 'spiderboy@shield.org',
+  //     school: 'MIT'
+  //   }
+  // ];
+  // console.log(teamData);
 
   return `
       <!DOCTYPE html>
