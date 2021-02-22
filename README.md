@@ -37,5 +37,5 @@ W Rowland => find me on [GitHub](https://github.com/rolanduwxcc) or email me at 
 [Screenshot of Example Page](assets/media/team-profile.png)<br>
 
 ## License & Copyrights
-Licensed under the [LICENSE]('https://github.com/rolanduwxcc/ch10-team-profile-generator/blob/main/LICENSE')
+Licensed under the [LICENSE]('/LICENSE')
 ©️2021 rolanduwxcc, Inc
