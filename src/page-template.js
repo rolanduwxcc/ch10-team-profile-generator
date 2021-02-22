@@ -5,28 +5,23 @@
 //----------------------------------------Get Role Specific HTML
 const getRoleHTML = (role, roleSpecificData) => {
   if (role === 'Manager') {
-    return `<h4 class="portfolio-item-title text-light">office number :: <span class="text-tertiary">${roleSpecificData}</span></h4>`;
+    return `<h5 class="portfolio-item-title text-light">office number :: <span class="text-tertiary">${roleSpecificData}</span></h5>`;
   } else if (role === 'Engineer') {
-    return `<h4 class="portfolio-item-title text-light">github :: <a class="text-tertiary" href="https://github.com/${roleSpecificData}" target="_blank">${roleSpecificData}</a></h4>`;
+    return `<h5 class="portfolio-item-title text-light">github :: <a class="text-tertiary" href="https://github.com/${roleSpecificData}" target="_blank">${roleSpecificData}</a></h5>`;
 
   } else if (role === 'Intern') {
-    return `<h4 class="portfolio-item-title text-light">school :: <span class="text-tertiary">${roleSpecificData}</span></h4>`;
+    return `<h5 class="portfolio-item-title text-light">school :: <span class="text-tertiary">${roleSpecificData}</span></h5>`;
   } else
-  return `
-      <section class="my-3" id="about">
-        <h2 class="text-dark bg-primary p-2 display-inline-block">About Me</h2>
-        <p>${aboutText}</p>
-      </section>
-    `;
+  return;
 };
 
 //-------------------------HTML generation for each employee card
-const generateTeamMemberData = projectsArr => {
+const generateTeamMemberData = teamArr => {
   return `
     <section class="my-3" id="portfolio">
       
       <div class="flex-row justify-space-between">
-      ${projectsArr
+      ${teamArr
       .map(({ name, id, email, officeNumber="", github="", school="" }) => {
         let role = "";
         let roleHTML = "";
@@ -44,10 +39,10 @@ const generateTeamMemberData = projectsArr => {
         else {role = ""}
         return `
           <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3">
-            <h3 class="portfolio-item-title text-light">${name}</h3>
-            <h4 class="text-uppercase text-light">${role}</h4>
-            <h4 class="portfolio-item-title text-light">employee id :: <span class="text-tertiary">${id}</span></h4>
-            <h4 class="portfolio-item-title text-light">email :: <a class="text-tertiary" href="mailto:${email}">${email}</a></h4>
+            <h2 class="portfolio-item-title text-light">${name}</h2>
+            <h4 class="text-uppercase text-tertiary">${role}</h4>
+            <h5 class="portfolio-item-title text-light">employee id :: <span class="text-tertiary">${id}</span></h5>
+            <h5 class="portfolio-item-title text-light">email :: <a class="text-tertiary" href="mailto:${email}">${email}</a></h5>
             ${roleHTML}
           </div>
         `;
@@ -59,9 +54,10 @@ const generateTeamMemberData = projectsArr => {
 };
 
 module.exports = teamData => {
-  //destructure projects and about from templateData based on property key names
   const myName = "Roland"
   const myGithub = "rolanduwxcc";
+
+  //mock data to set team Data with full looking view for testing.
   teamData = [
     Manager = {
       name: 'Nick Fury',
@@ -115,7 +111,7 @@ module.exports = teamData => {
           <div class="container flex-row justify-space-between align-center py-3">
             <h1 class="page-title text-secondary bg-dark py-2 px-3">My Team</h1>
             <nav class="flex-row">
-              <a class="ml-2 my-1 px-2 py-1 bg-secondary text-dark" href="https://github.com/${myGithub}/ch10-team-profile-generator" target="_blank">Team Profile Generator</a>
+              <a class="ml-2 my-1 px-2 py-1 bg-secondary text-dark" href="https://github.com/${myGithub}/ch10-team-profile-generator" target="_blank">About Team Profile Generator</a>
             </nav>
           </div>
         </header>
